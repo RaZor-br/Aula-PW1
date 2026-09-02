@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Notícias ETEC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho com Menu Flexbox e Hamburguer Responsivo -->
+  <header class="topo-site">
+    <nav class="menu-principal">
+      <h1 class="logo">ETEC News</h1>
+
+      <!-- Controle do Menu Hambúrguer (CSS puro) -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="links-menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal com CSS Grid -->
+  <main class="container-principal" id="noticias">
+    <h2 class="titulo-secao">Destaques do Dia</h2>
+
+    <div class="grade-portal">
+      <!-- Notícia em Destaque Principal -->
+      <article class="card-noticia destaque-principal">
+        <span class="tag-categoria">Tecnologia</span>
+        <h3>Inteligência Artificial revoluciona o mercado de desenvolvimento web</h3>
+        <p>Novas ferramentas auxiliam programadores a construir interfaces acessíveis e automatizar tarefas repetitivas no dia a dia.</p>
+        <a href="#" class="btn-leia-mais">Leia mais</a>
+      </article>
+
+      <!-- Notícias Secundárias -->
+      <article class="card-noticia">
+        <span class="tag-categoria">Educação</span>
+        <h3>Estudantes de TI apresentam projetos de impacto na comunidade</h3>
+        <p>Soluções criadas nas aulas de programação resolvem problemas reais de ONGs da região.</p>
+        <a href="#" class="btn-leia-mais">Leia mais</a>
+      </article>
+
+      <article class="card-noticia">
+        <span class="tag-categoria">Carreira</span>
+        <h3>Vagas para desenvolvedores front-end continuam crescendo</h3>
+        <p>Especialistas apontam que domínio de HTML, CSS e Git é o primeiro passo para o mercado.</p>
+        <a href="#" class="btn-leia-mais">Leia mais</a>
+      </article>
+
+      <!-- Barra Lateral -->
+      <aside class="barra-lateral">
+        <h3>Mais Lidas</h3>
+        <ol class="lista-populares">
+          <li><a href="#">Guia completo de CSS Grid para iniciantes</a></li>
+          <li><a href="#">Como estruturar seu primeiro portfólio no GitHub</a></li>
+          <li><a href="#">Boas práticas de acessibilidade na Web</a></li>
+          <li><a href="#">Flexbox vs CSS Grid: quando usar cada um?</a></li>
+        </ol>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Seção de Formulário (Newsletter) -->
+  <section class="secao-newsletter" id="newsletter">
+    <div class="container-newsletter">
+      <h2>Receba as Notícias em Primeira Mão</h2>
+      <p>Cadastre seu e-mail para receber boletins diários com as principais novidades da tecnologia.</p>
+
+      <form class="form-newsletter">
+        <div class="campo-grupo">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+        </div>
+
+        <button type="submit" class="btn-enviar">Inscrever-se</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Rodapé Semântico -->
+  <footer class="rodape-site" id="contato">
+    <p>&copy; 2026 Portal de Notícias ETEC - Todos os direitos reservados.</p>
+    <p>Desenvolvido na disciplina de Programação Web 1.</p>
+  </footer>
+
+</body>
+</html>

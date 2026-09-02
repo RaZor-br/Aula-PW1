@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dicionário de Dados - Sistema de Cinema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dicionário de Dados</h1>
+
+    <h2>Entidade: Sala</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tabela</th>
+                <th>Atributo</th>
+                <th>Tipo</th>
+                <th>Tamanho</th>
+                <th>Restrições</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Sala</b></td>
+                <td>nome</td>
+                <td>Varchar</td>
+                <td>50</td>
+                <td>Chave Primária, Not Null</td>
+                <td>Nome ou identificador único da sala de exibição</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>capacidade</td>
+                <td>Integer</td>
+                <td>-</td>
+                <td>Not Null</td>
+                <td>Capacidade máxima de assentos da sala</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Entidade: Filme</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tabela</th>
+                <th>Atributo</th>
+                <th>Tipo</th>
+                <th>Tamanho</th>
+                <th>Restrições</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Filme</b></td>
+                <td>codFilme</td>
+                <td>Integer</td>
+                <td>-</td>
+                <td>Chave Primária, Not Null</td>
+                <td>Código de identificação do filme</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>diretor</td>
+                <td>Varchar</td>
+                <td>100</td>
+                <td>Not Null</td>
+                <td>Nome do diretor do filme</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>nomePortugues</td>
+                <td>Varchar</td>
+                <td>100</td>
+                <td>Not Null</td>
+                <td>Título do filme traduzido para o português</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>nomeOriginal</td>
+                <td>Varchar</td>
+                <td>100</td>
+                <td>Not Null</td>
+                <td>Título original do filme</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>tipo</td>
+                <td>Varchar</td>
+                <td>30</td>
+                <td>Not Null</td>
+                <td>Gênero ou tipo do filme (ex: Ação, Drama)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>sinopse</td>
+                <td>Varchar</td>
+                <td>500</td>
+                <td>Null</td>
+                <td>Breve resumo da história do filme</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>ano</td>
+                <td>Integer</td>
+                <td>4</td>
+                <td>Not Null</td>
+                <td>Ano de lançamento do filme</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Entidade: Sessão</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tabela</th>
+                <th>Atributo</th>
+                <th>Tipo</th>
+                <th>Tamanho</th>
+                <th>Restrições</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Sessão</b></td>
+                <td>codHorario</td>
+                <td>Integer</td>
+                <td>-</td>
+                <td>Chave Estrangeira, Not Null</td>
+                <td>Referência ao horário da sessão (horário.codHorario)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>codFilme</td>
+                <td>Integer</td>
+                <td>-</td>
+                <td>Chave Estrangeira, Not Null</td>
+                <td>Referência ao filme exibido (filme.codFilme)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>nome</td>
+                <td>Varchar</td>
+                <td>50</td>
+                <td>Chave Estrangeira, Not Null</td>
+                <td>Referência à sala da exibição (sala.nome)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>data</td>
+                <td>Date</td>
+                <td>-</td>
+                <td>Not Null</td>
+                <td>Data em que a sessão será realizada</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Entidade: Horário</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tabela</th>
+                <th>Atributo</th>
+                <th>Tipo</th>
+                <th>Tamanho</th>
+                <th>Restrições</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Horário</b></td>
+                <td>codHorario</td>
+                <td>Integer</td>
+                <td>-</td>
+                <td>Chave Primária, Not Null</td>
+                <td>Código identificador do horário</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>horario</td>
+                <td>Time</td>
+                <td>-</td>
+                <td>Not Null</td>
+                <td>Hora exata do início</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Entidade: Premiação</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tabela</th>
+                <th>Atributo</th>
+                <th>Tipo</th>
+                <th>Tamanho</th>
+                <th>Restrições</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Premiação</b></td>
+                <td>codPremiação</td>
+                <td>Integer</td>
+                <td>-</td>
+                <td>Chave Primária, Not Null</td>
+                <td>Código de identificação da premiação</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>codFilme</td>
+                <td>Integer</td>
+                <td>-</td>
+                <td>Chave Estrangeira, Not Null</td>
+                <td>Referência ao filme premiado (filme.codFilme)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>descrPremiação</td>
+                <td>Varchar</td>
+                <td>150</td>
+                <td>Not Null</td>
+                <td>Nome ou categoria do prêmio recebido</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>ano</td>
+                <td>Integer</td>
+                <td>4</td>
+                <td>Not Null</td>
+                <td>Ano de recebimento do prêmio</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Entidade: Trabalha</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tabela</th>
+                <th>Atributo</th>
+                <th>Tipo</th>
+                <th>Tamanho</th>
+                <th>Restrições</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Trabalha</b></td>
+                <td>codEscala</td>
+                <td>Integer</td>
+                <td>-</td>
+                <td>Chave Primária, Not Null</td>
+                <td>Código identificador da escala de trabalho</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>codHorario</td>
+                <td>Integer</td>
+                <td>-</td>
+                <td>Chave Estrangeira, Not Null</td>
+                <td>Referência ao horário de trabalho (horário.codHorario)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>carteiraTrabalho</td>
+                <td>Varchar</td>
+                <td>20</td>
+                <td>Chave Estrangeira, Not Null</td>
+                <td>Referência ao funcionário alocado (funcionario.carteiraTrabalho)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>função</td>
+                <td>Varchar</td>
+                <td>50</td>
+                <td>Not Null</td>
+                <td>Cargo ou função desempenhada no turno</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Entidade: Funcionário</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tabela</th>
+                <th>Atributo</th>
+                <th>Tipo</th>
+                <th>Tamanho</th>
+                <th>Restrições</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Funcionário</b></td>
+                <td>carteiraTrabalho</td>
+                <td>Varchar</td>
+                <td>20</td>
+                <td>Chave Primária, Not Null</td>
+                <td>Número da Carteira de Trabalho e Previdência Social (CTPS)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>nome</td>
+                <td>Varchar</td>
+                <td>100</td>
+                <td>Not Null</td>
+                <td>Nome completo do funcionário</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>salario</td>
+                <td>Decimal</td>
+                <td>10</td>
+                <td>Not Null</td>
+                <td>Valor da remuneração mensal</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>dataAdmissão</td>
+                <td>Date</td>
+                <td>-</td>
+                <td>Not Null</td>
+                <td>Data de contratação do funcionário</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+.grade-noticias {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: repeat(3, 1fr); */
+    gap: 20px;
+}
+
+.noticia-destaque {
+    grid-column: span 2;
+}
+
+
+
+
+/* Estilos Base da Página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+    color: #333333;
+}
+
+.container-portal {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.titulo-portal {
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+/* Cartões Gerais de Notícia */
+.card-noticia {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo Diferenciado para a Notícia em Destaque */
+.noticia-destaque {
+    grid-column: span 2;
+    background-color: #eef4ff;
+    border-left: 5px solid #0056b3;
+}
+
+.tag-categoria {
+    display: inline-block;
+    background-color: #0056b3;
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Barra Lateral ocupando a Coluna Direita */
+.barra-lateral {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.barra-lateral h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 8px;
+    color: #0056b3;
+}
+
+.barra-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.barra-lateral li {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 8px;
+}
+
+.barra-lateral a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.barra-lateral a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .grade-noticias {
+        grid-template-columns: 1fr;
+    }
+
+    .noticia-destaque {
+        grid-column: span 1;
+    }
+}

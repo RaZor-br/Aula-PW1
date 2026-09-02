@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px 14px;
+            margin: 5px 0;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            color: #1e293b;
+            background-color: #f8fafc;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="date"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            margin-top: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        button[type="submit"] {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 28px;
+            background-color: #6366f1;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #4f46e5;
+        }
+
+        button[type="submit"]:active {
+            transform: scale(0.97);
+        }
+
+        button[type="reset"] {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 28px;
+            background-color: #ff2f2f;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 16px;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #d01111;
+        }
+
+        button[type="reset"]:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+
+<body>
+    <form action="D:\1º ano\web\3º bim\26_aula\enviar" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="seu@email.com" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+
+        <label for="data">Data de Nascimento:</label>
+        <input type="date" name="data" id="data" required>
+
+        <label for="mensagem">Digite sua mensagem aqui:</label>
+        <textarea name="mensagem" id="mensagem" rows="6" placeholder="Escreva algo aqui..."></textarea>
+
+        <label for="turma">Turma:</label>
+        <select name="turma" id="turma">
+            <option value="">Selecione...</option>
+            <option value="1AMS">1º AMS</option>
+            <option value="2AMS">2º AMS</option>
+            <option value="3AMS">3º AMS</option>
+        </select>
+
+        <button type="submit" value="Enviar">Enviar</button>
+        <button type="reset" value="Limpar">Limpar</button>
+    </form>
+</body>
+
+</html>

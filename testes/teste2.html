@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura — Soluções do Futuro</title>
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* RESET & VARIÁVEIS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(255, 255, 255, 0.03);
+      --border-card: rgba(255, 255, 255, 0.08);
+      --primary: #6366f1;
+      --secondary: #06b6d4;
+      --accent: #f43f5e;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ELEMENTOS DE FUNDO (Luzes/Gradients) */
+    .glow-bg {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: -1;
+      opacity: 0.4;
+    }
+    .glow-1 {
+      top: -100px;
+      left: -100px;
+      width: 450px;
+      height: 450px;
+      background: var(--primary);
+    }
+    .glow-2 {
+      top: 300px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: var(--secondary);
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 1.5rem 2rem;
+    }
+    header.scrolled {
+      background: rgba(11, 15, 25, 0.75);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-card);
+      padding: 1rem 2rem;
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+    .btn-cta {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      padding: 0.65rem 1.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(99, 102, 241, 0.5);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 1.5rem 4rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 50px;
+      color: #a5b4fc;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      padding: 0.65rem 1.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 1px solid var(--border-card);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* CARDS / RECURSOS */
+    .features {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .section-title h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .section-title p {
+      color: var(--text-muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(99, 102, 241, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* CONTADOR INTERATIVO */
+    .stats {
+      background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.02), transparent);
+      padding: 4rem 1.5rem;
+      margin: 4rem 0;
+      border-top: 1px solid var(--border-card);
+      border-bottom: 1px solid var(--border-card);
+    }
+    .stats-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-item h3 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .stat-item p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* RODAPÉ */
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-card);
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* Simplificação para versão mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Efeitos de Fundo -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <!-- Header / Nav -->
+  <header id="navbar">
+    <nav>
+      <div class="logo">Aura.</div>
+      <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#metricas">Métricas</a></li>
+      </ul>
+      <button class="btn-cta" onclick="mostrarAlerta()">Começar Agora</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div>
+      <span class="badge">🚀 Nova Versão 2.0 Lançada</span>
+      <h1>Eleve a experiência da sua marca ao <span>próximo nível</span>.</h1>
+      <p>Desenvolvemos interfaces intuitivas, rápidas e visualmente deslumbrantes para impulsionar o seu negócio digital.</p>
+      <div class="hero-buttons">
+        <a href="#recursos" class="btn-cta">Explorar Recursos</a>
+        <a href="#metricas" class="btn-secondary">Ver Métricas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recursos Section -->
+  <section class="features" id="recursos">
+    <div class="section-title">
+      <h2>Criado para o Futuro</h2>
+      <p>Tudo o que você precisa para criar uma presença digital impressionante.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Alta Performance</h3>
+        <p>Código otimizado e tempos de carregamento instantâneos para garantir a melhor retenção de usuários.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🎨</div>
+        <h3>Design Moderno</h3>
+        <p>Estética alinhada às últimas tendências globais de UI/UX, focando em simplicidade e elegância.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>100% Responsivo</h3>
+        <p>Adaptação perfeita a qualquer tamanho de tela, de smartphones a monitores ultrawide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Métricas Interativas -->
+  <section class="stats" id="metricas">
+    <div class="stats-container">
+      <div class="stat-item">
+        <h3 class="count" data-target="99">0</h3>
+        <p>% Satisfação</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="count" data-target="150">0</h3>
+        <p>+ Projetos</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="count" data-target="24">0</h3>
+        <p>/7 Suporte</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Aura Inc. Todos os direitos reservados. Feito com HTML, CSS e JavaScript.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // 1. Alterar Navbar ao Rolar a Página
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 2. Animação de Contadores Númericos
+    const counters = document.querySelectorAll('.count');
+    let animated = false;
+
+    window.addEventListener('scroll', () => {
+      const statsSection = document.getElementById('metricas');
+      const sectionPos = statsSection.getBoundingClientRect().top;
+      const screenPos = window.innerHeight / 1.3;
+
+      if (sectionPos < screenPos && !animated) {
+        animated = true;
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          let count = 0;
+          const speed = target / 40;
+
+          const updateCount = () => {
+            count += speed;
+            if (count < target) {
+              counter.innerText = Math.ceil(count);
+              setTimeout(updateCount, 30);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          updateCount();
+        });
+      }
+    });
+
+    // 3. Função do Botão de Ação
+    function mostrarAlerta() {
+      alert('Obrigado pelo interesse! Seu projeto começa agora.');
+    }
+  </script>
+</body>
+</html>

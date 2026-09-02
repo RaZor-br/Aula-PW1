@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+
+    <style>
+        body {
+            max-width: 480px;
+            margin: 40px auto;
+            padding: 32px;
+            background-color: #f8f0d7;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+
+            font-family: Arial, sans-serif;
+        }
+
+        body h2 {
+            margin: 0 0 24px;
+            font-size: 20px;
+            color: #1e293b;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px 14px;
+            margin: 5px 0;
+            border: 1.5px solid #cac2a3;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            color: #1e293b;
+            background-color: #faf4e0;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+
+        }
+
+        input[type="text"]:hover,
+        input[type="email"]:hover,
+        input[type="date"]:hover,
+        input[type="radio"]:hover,
+        textarea:hover,
+        select:hover {
+            border-color: #6366f1;
+            transform: scale(1.025);
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            margin-top: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        button[type="submit"] {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 28px;
+            background-color: #6366f1;
+            color: #fef0d1;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #4f46e5;
+        }
+
+        button[type="submit"]:active {
+            transform: scale(0.97);
+        }
+
+        button[type="reset"] {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 28px;
+            background-color: #ff2f2f;
+            color: #fff9d1;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 16px;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #d01111;
+        }
+
+        button[type="reset"]:active {
+            transform: scale(0.97);
+        }
+
+
+        input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            margin: 0 4px 0 0;
+            display: inline-block;
+            vertical-align: middle;
+            appearance: none;
+            border: 1.5px solid #cac2a3;
+            border-radius: 50%;
+            background-color: #faf4e0;
+            cursor: pointer;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        input[type="radio"]:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        input[type="radio"]:checked {
+            border-color: #6366f1;
+            background-color: #6366f1;
+            box-shadow: inset 0 0 0 3px #faf4e0, 0 0 0 0px transparent;
+            transition: background-color 0.25s ease, transform 0.1s ease;
+        }
+
+
+        input[type="radio"]:checked:focus {
+            box-shadow: inset 0 0 0 3px #faf4e0, 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        input[type="radio"]+label {
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 16px;
+            margin-right: 16px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="D:\1º ano\web\3º bim\26_aula\enviar" method="post">
+
+        <h2>Formulário de Inscrição</h2>
+
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="seu@email.com" required>
+
+        <label for="data">Data de Nascimento:</label>
+        <input type="date" name="data" id="data" required>
+
+        <label for="turma">Turma:</label>
+        <select name="turma" id="turma">
+            <option value="">Selecione...</option>
+            <option value="1AMS">1º AMS</option>
+            <option value="2AMS">2º AMS</option>
+            <option value="3AMS">3º AMS</option>
+        </select>
+        <div class="periodo">
+            <label for="periodo">Período:</label><br>
+
+            <input type="radio" id="manha" name="periodo" value="manha">
+            <label for="manha">Manhã</label>
+
+            <input type="radio" id="tarde" name="periodo" value="tarde">
+            <label for="tarde">Tarde</label>
+
+            <input type="radio" id="noite" name="periodo" value="noite">
+            <label for="noite">Noite</label>
+
+            <label for="mensagem">Digite sua mensagem aqui:</label>
+        </div>
+        <textarea name="mensagem" id="mensagem" rows="6" placeholder="Escreva algo aqui..."></textarea>
+
+        <button type="submit" value="Enviar">Enviar</button>
+        <button type="reset" value="Limpar">Limpar</button>
+    </form>
+</body>
+
+</html>

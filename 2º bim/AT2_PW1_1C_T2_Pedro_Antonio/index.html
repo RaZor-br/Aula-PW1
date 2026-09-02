@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Archivo+Black&family=Chela+One&family=Story+Script&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Turistico</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color:rgb(63, 62, 62);
+            color: rgb(239, 241, 241);
+            font-family: 'Lucida Sans', 'antonio';
+            margin: 0px;
+        }
+        section{
+            background-color: rgb(68, 68, 68);
+            padding: 10px;
+            margin-top: 10px;
+            border: 8px solid #222222;
+            border-radius: 20px;
+        }
+        footer{
+            background-color: rgb(75, 73, 73);
+            color: rgb(255, 255, 255);
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 25px;
+            border: 8px solid #242424;
+            font-family: Story Script;
+        }
+        .dest{
+            border-radius: 20px;
+            border: 8px solid #222222;
+            margin-top: 14px;
+            padding: 16px;
+        }
+        .links {
+            font-size: 20px;
+            font-family:'Times New Roman';
+            display: inline-block;
+            background-color: #ffe8a3;
+            border: 1px solid #d4a017;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-right: 8px;
+            transition: transform 0.2s;
+        }
+        .links:hover {
+            transform: scale(1.05);
+        }
+        .banner{
+            background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
+            url('https://rotadeviagem.com.br/wp-content/uploads/2025/09/salvador-bahia-pontos-turisticos-imperdiveis-na-capital-da-alegria-1024x576.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 42px;
+            border-radius: 16px;
+            min-height: 90vh;
+            
+            margin: 95px 3px 3px 3px; 
+        }
+        img{
+            border: 10px solid #28292b;
+            border-radius: 32px;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        img:hover{
+            transform: scale(1.125);
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #3b3b3b;
+            border: 3px solid #111;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        table:hover{
+            transform: scale(1.05);
+        }
+
+        th, td {
+            border-right: 2px solid #111;
+            border-bottom: 2px solid #111;
+            padding: 10px;
+            text-align: center;
+        }
+
+        tr td:last-child,
+        tr th:last-child {
+            border-right: none;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        th {
+            background-color: #143c83;
+            color: white;
+        }
+        .detalhes {
+            font-family: Story Script;
+        }
+
+        .menu-principal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 20px;
+            background: linear-gradient(90deg, #1d3557, #457b9d);
+        }
+
+        .logo {
+            margin: 0;
+            color: #f1faee;
+            font-size: 24px;
+        }
+
+        .links-menu {
+            display: flex;
+            gap: 14px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .links-menu a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+
+        .links-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .menu-principal { 
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .links-menu {
+                flex-wrap: wrap;
+            }
+            #horarios_visit{
+                transition: transform 0.5s;
+            }
+            #horarios_visit a:hover {
+            transform: scale(1.5);
+        }
+        }
+        #inicio {
+        scroll-margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav class="menu-principal">
+            <h1 class="logo">Festival Cultural</h1>
+            <ul class="links-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="roteiro.html">Roteiro</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <header id="inicio" class="banner">
+        <h1>Guia de pontos turisticos</h1>
+        <p>conheça os lugares para visitar na cidade</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2>sobre o projeto</h2>
+            <p>esta pagina apresenta sugestoes de locais para passeio em familia</p>
+        </section>
+        <div class="dest">
+            <h2>destaques da semana</h2>
+                <figure>
+                    <img src="https://ciclovivo.com.br/wp-content/uploads/2016/09/iStock_70952357_MEDIUM.jpg" alt="parque da cidade com lagos e arvores" width="320">
+                    <figcaption>parque da cidade</figcaption>
+                </figure>
+        </div>
+        <div class="detalhes dest">
+            <p>O Cristo Redentor, localizado no topo do morro do Corcovado, é um dos pontos turísticos mais famosos do Brasil. Além da enorme estátua, o local oferece uma vista panorâmica impressionante da cidade do Rio de Janeiro.</p>
+            <p>A Torre Eiffel é um dos maiores símbolos da França e recebe milhões de visitantes todos os anos. Durante a noite, sua iluminação transforma a paisagem de Paris em um cenário ainda mais marcante.</p>
+            <p>As Cataratas do Iguaçu impressionam turistas pela força e pela beleza natural de suas quedas d’água. O parque ao redor também abriga uma grande diversidade de animais e plantas.</p>
+            <p>O Coliseu de Roma é uma construção histórica que relembra o período do Império Romano. Mesmo após séculos, sua arquitetura continua atraindo visitantes de diferentes partes do mundo.</p>
+            <p>O Monte Fuji, no Japão, é conhecido por sua beleza e importância cultural. Durante determinadas épocas do ano, muitos turistas realizam trilhas para alcançar seu topo.</p>
+        </div>
+        <section>
+            <h2>horarios de visitação</h2>
+            <table id="horarios_visit">
+                <tr>
+                    <th>local</th>
+                    <th>dia</th>
+                    <th>horario</th>
+                </tr>
+                <tr>
+                    <td>parque central</td>
+                    <td>sabado</td>
+                    <td>09:00 as 18:00</td> </tr>
+                <tr>
+                    <td>museu historico</td>
+                    <td>domingo</td>
+                    <td> 18:00 as 16:00</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>desenvolvido por Pedro Antonio - 1 AMS T2</p>
+        <P>ETEC 2026</P>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background e gradientes </title>
+    <style>
+        .banner{
+            background: linear-gradient(to right, #ff006e, #f0b560);
+            padding: 40px;
+            color: white;
+            border-radius: 28px;
+            margin-top: 10px;
+        }
+
+        .to-bottom{
+            background: linear-gradient(to bottom, #667bc6, #da70d6);
+        }
+        .to-135deg{
+            background: linear-gradient(135deg, #667bc6, #da70d6);
+        }
+        .to-45deg{
+            background:  linear-gradient(45deg, #667bc6, #da70d6);
+        }
+        .arco-iris{
+            background: linear-gradient(to right,
+            red,
+            yellow,
+            green,
+            blue,
+            purple
+            );
+        }
+        .bandeira{
+            background: linear-gradient(to right,
+            #088D70,
+            #28CCA7,
+            #97E8C5,
+            #ffffff,
+            #79ADE7,
+            #4F49CF,
+            #41197A
+            );
+        }
+        .circulo{
+            background: radial-gradient(circle, #ffde00, #ff006e);
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+        .spotlight{
+            background: radial-gradient(circle at 30% 40%, #ffde00, #222);
+            padding: 40px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>background e gradientes</h1>
+    
+    <div class="banner">
+        Cores Solidas como Background
+    </div>
+    
+    <div class="banner to-bottom">
+        De cima para baixo
+    </div>
+
+    <div class="banner to-135deg">
+        135 degre(diagonal)
+    </div>
+
+    <div class="banner to-45deg">
+        45 degre(diagonal)
+    </div>
+    
+    <div class="banner arco-iris">
+        arco iris
+    </div>
+
+    <div class="banner bandeira">
+        GAY
+    </div>
+
+    <div class="banner circulo"></div>
+
+    <div class="circulo spotlight"></div>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja - Rede Craft</title>
+    <style>
+        /* Estilos Globais e Reset Simples */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Container Principal */
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #1e1e1e;
+            padding: 15px 30px;
+            display: block;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            align-items: center;
+
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+            margin: 2px 0;
+            gap: 12px;
+            padding: 6px;
+        }
+
+        nav a:hover {
+            border: 1px solid #7e837e;
+            border-radius: 5px;
+            background-color: #5c5757;
+            color: #55ff55;
+            transform: scale(1.1);
+        }
+
+        /* Hero / Banner */
+        .hero {
+            background-color: #1a241a;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 1px solid #2a3a2a;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #55ff55;
+        }
+
+        .ip-box {
+            display: inline-block;
+            background-color: #000;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            border: 1px dashed #55ff55;
+        }
+
+        .ip-box strong {
+            color: #55ff55;
+        }
+        .produtos-section {
+            margin: 40px 0;
+        }
+
+        .produtos-section h2 {
+            margin-bottom: 20px;
+            border-left: 4px solid #55ff55;
+            padding-left: 10px;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card-produto {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        .card-produto.destaque {
+            border-color: #55ff55;
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .destaque-tag {
+            background-color: #55ff55;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .preco {
+            font-size: 1.5rem;
+            color: #55ff55;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .preco span {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .vantagens {
+            list-style: none;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        .vantagens li {
+            margin-bottom: 8px;
+        }
+
+        .descricao-produto {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+
+        .btn-comprar {
+            display: block;
+            text-align: center;
+            background-color: #55ff55;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .btn-comprar:hover {
+            background-color: #44cc44;
+        }
+
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid #55ff55;
+        }
+
+        .info-card h4 {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #161616;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 0.85rem;
+            color: #777;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo do Servidor">
+            <h1>Rede Craft</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#vip">VIPs</a></li>
+                <li><a href="#Money">Money</a></li>
+                <li><a href="#regras">Regras</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>Sua aventura no próximo nível</h2>
+            <p>Adquira vantagens exclusivas e ajude a manter o servidor online!</p>
+            <div class="ip-box">
+                <span>IP: <strong>jogar.redecraft.com</strong></span>
+            </div>
+        </div>
+    </section>
+
+
+    <main class="container">
+
+
+        <section id="vip" class="produtos-section">
+            <h2>Planos VIP</h2>
+
+            <div class="grid-produtos">
+
+
+                <article class="card-produto">
+                    <h3>VIP Bronze</h3>
+                    <p class="preco">R$ 7,50 <span>/mês</span></p>
+                    <ul class="vantagens">
+                        <li>Tag <strong>[Bronze]</strong> no chat e tab</li>
+                        <li>Acesso a /fly no lobby</li>
+                        <li>Kit diários, semanais, mensais</li>
+                        <li>2x Pontos de Home</li>
+                    </ul>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </article>
+
+                <article class="card-produto">
+                    <h3>VIP Prata</h3>
+                    <p class="preco">R$ 10,00 <span>/mês</span></p>
+                    <ul class="vantagens">
+                        <li>Tag <strong>[Prata]</strong> no chat e tab</li>
+                        <li>Acesso a /fly no lobby</li>
+                        <li>Kit diários, semanais, mensais</li>
+                        <li>4x Pontos de Home</li>
+                    </ul>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </article>
+
+                <article class="card-produto destaque">
+                    <h3>VIP Ouro</h3>
+                    <p class="preco">R$ 20,00 <span>/mês</span></p>
+                    <ul class="vantagens">
+                        <li>Tag <strong>[Ouro]</strong> no chat e tab</li>
+                        <li>Acesso a /fly no lobby</li>
+                        <li>Kit diários, semanais, mensais</li>
+                        <li>6x Pontos de Home</li>
+                    </ul>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </article>
+
+
+                <article class="card-produto destaque">
+
+                    <h3>VIP Diamante</h3>
+                    <p class="preco">R$ 35,00 <span>/mês</span></p>
+                    <ul class="vantagens">
+                        <li>Tag <strong>[Diamante]</strong> no chat e tab</li>
+                        <li>Acesso a /fly em todo o servidor</li>
+                        <li>Kit diário de armadura de diamante</li>
+                        <li>8x Pontos de Home</li>
+                    </ul>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </article>
+
+
+                <article class="card-produto">
+
+                    <h3>VIP Rubi</h3>
+                    <p class="preco">R$ 40,00 <span>/mês</span></p>
+                    <ul class="vantagens">
+                        <li>Tag <strong>[Rubi]</strong> personalizada</li>
+                        <li>Todos os benefícios anteriores</li>
+                        <li>Homes ilimitadas</li>
+                        <li>Kit semanal de itens raros</li>
+                    </ul>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="Money" class="produtos-section">
+            <h2>Pacotes de Money</h2>
+
+            <div class="grid-produtos">
+
+                <article class="card-produto">
+                    <h3>100.000 Money</h3>
+                    <p class="preco">R$ 5,00</p>
+                    <p class="descricao-produto">Ideal para comprar cosméticos e itens básicos na loja in-game.</p>
+                    <a href="#" class="btn-comprar">Comprar</a>
+                </article>
+
+                <article class="card-produto">
+                    <h3>250.000 Money</h3>
+                    <p class="preco">R$ 10,00</p>
+                    <p class="descricao-produto">Inclui 2 Keys bônus!</p>
+                    <a href="#" class="btn-comprar">Comprar</a>
+                </article>
+
+                <article class="card-produto">
+                    <h3>500.000 Money</h3>
+                    <p class="preco">R$ 20,00</p>
+                    <p class="descricao-produto">O melhor valor por moeda.<br> Inclui 5 Keys bônus!</p>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </article>
+
+            </div>
+        </section>
+
+
+        <section id="regras" class="info-section">
+            <h2>Informações Importantes</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Entrega Automática</h4>
+                    <p>Após a confirmação do pagamento, seus benefícios são entregues automaticamente no jogo em até 10
+                        minutos.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Rede Craft. Todos os direitos reservados.</p>
+            <p>Não somos afiliados, associados ou mantidos pela Mojang Studios ou Microsoft.</p>
+            <p>Feito por: Pedro Antonio</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

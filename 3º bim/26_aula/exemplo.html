@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo</title>
+    <style>
+        .formulario-moderno {
+            max-width: 480px;
+            margin: 40px auto;
+            padding: 32px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+            font-family: Arial, sans-serif;
+        }
+
+        .formulario-moderno h2 {
+            margin: 0 0 24px;
+            font-size: 20px;
+            color: #1e293b;
+        }
+
+        .grupo-campo {
+            margin-bottom: 20px;
+        }
+
+        .formulario-moderno label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .formulario-moderno input[type="text"],
+        .formulario-moderno input[type="email"],
+        .formulario-moderno select,
+        .formulario-moderno textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #1e293b;
+            background-color: #f8fafc;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .formulario-moderno input:focus,
+        .formulario-moderno select:focus,
+        .formulario-moderno textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .formulario-moderno textarea {
+            resize: vertical;
+        }
+
+        .formulario-moderno button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #6366f1;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .formulario-moderno button[type="submit"]:hover {
+            background-color: #4f46e5;
+        }
+
+        .formulario-moderno button[type="submit"]:active {
+            transform: scale(0.97);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form class="formulario-moderno">
+        <h2>Formulário de Inscrição</h2>
+
+        <div class="grupo-campo">
+            <label for="ex-nome">Nome completo</label>
+            <input type="text" id="ex-nome" name="nome" placeholder="Ex.: Maria Souza">
+        </div>
+
+        <div class="grupo-campo">
+            <label for="ex-email">E-mail</label>
+            <input type="email" id="ex-email" name="email" placeholder="seu@email.com">
+        </div>
+
+        <div class="grupo-campo">
+            <label for="ex-turma">Turma</label>
+            <select id="ex-turma" name="turma">
+                <option value="">Selecione...</option>
+                <option value="1AMS">1º AMS</option>
+                <option value="2AMS">2º AMS</option>
+                <option value="3AMS">3º AMS</option>
+            </select>
+        </div>
+
+        <div class="grupo-campo">
+            <label for="ex-mensagem">Mensagem</label>
+            <textarea id="ex-mensagem" name="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
+        </div>
+
+        <button type="submit">Enviar inscrição</button>
+    </form>
+</body>
+
+</html>

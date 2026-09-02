@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eeebc9;
+        }
+        .menu-principal {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            background-color: #1d3557;
+        }
+
+        .logo {
+            margin: 0;
+            color: #f1faee;
+            font-size: 24px;
+        }
+
+        .links-menu {
+            display: flex;
+            gap: 16px;
+            list-style: none;
+            margin: 0;
+            padding: 0px;
+        }
+        .links-menu a {
+            color: #f8f6ea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 6px 10px;
+            border-radius: 6px;
+        }
+
+        .links-menu a:hover {
+            background-color: #457b9d;
+        }
+
+        @media (max-width: 768px) {
+            .menu-principal {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .links-menu {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+        }   
+    </style>
+</head>
+
+<body>
+    <header class="topo-site">
+        <nav class="menu-principal">
+            <h1 class="logo"> Festival Cultural</h1>
+            <ul class="links-menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Programação</a></li>
+                <li><a href="#">Galeria</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>

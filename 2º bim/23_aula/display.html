@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamento Float vs Display</title>
+
+    <style>
+        .programacao-block .bloco {
+            display: block;
+            padding: 8px;
+            margin-bottom: 6px;
+            border: 1px solid #999;
+        }
+        .tag {
+            display: inline;
+            background-color: #ffe8a3;
+            border: 1px solid #d4a017;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        .cards-evento .card {
+            display: inline-block;
+            width: 180px;
+            padding: 12px;
+            margin-right: 10px;
+            border: 2px solid #333;
+        }
+        .aviso-temporario{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Posicionamento Float vs Display</h1>
+
+    <section class="programacao-block">
+        <p class="bloco">Abertura - 8h</p>
+        <p class="bloco">Oficina de Dança - 18h</p>
+        <p class="bloco">Show Musical - 14h</p>
+    </section>
+
+    <p>
+        <span class="tag">Musica</span>
+        <span class="tag">Teatro</span>
+        <span class="tag">Dança</span>
+    </p>
+
+    <section class="cards-evento">
+        <article class="card">Musica</article>
+        <article class="card">Dança</article>
+        <article class="card">Teatro</article>
+    </section>
+
+    <div class="aviso-temporario">
+        display: none esconde totalmente o elemento da pagina
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Web ETEC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container-calculadora">
+    <header class="cabecalho-calculadora">
+      <h1>Calculadora ETEC</h1>
+      <p>Operações Matemáticas com JavaScript</p>
+    </header>
+
+    <section class="painel-entradas">
+      <div class="grupo-campo">
+        <label for="numero1">Primeiro Número:</label>
+        <input type="number" id="numero1" step="any" placeholder="Digite o primeiro valor">
+      </div>
+
+      <div class="grupo-campo">
+        <label for="numero2">Segundo Número:</label>
+        <input type="number" id="numero2" step="any" placeholder="Digite o segundo valor">
+      </div>
+    </section>
+
+    <section class="painel-operacoes">
+      <button type="button" class="btn-operacao" onclick="somar()">Somar (+)</button>
+      <button type="button" class="btn-operacao" onclick="subtrair()">Subtrair (-)</button>
+      <button type="button" class="btn-operacao" onclick="multiplicar()">Multiplicar (*)</button>
+      <button type="button" class="btn-operacao" onclick="dividir()">Dividir (/)</button>
+      <button type="button" class="btn-limpar" onclick="limpar()">Limpar Campos</button>
+    </section>
+
+    <footer class="painel-resultado">
+      <span class="rotulo-resultado">Resultado:</span>
+      <div class="visor-resultado" id="resultado">Informe os valores acima</div>
+    </footer>
+  </main>
+
+  <!-- Conexão com o arquivo JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+</html>

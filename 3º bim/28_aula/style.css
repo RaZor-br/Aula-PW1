@@ -1,0 +1,287 @@
+/* Reset e Estilos Gerais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Header e Menu Responsivo (Flexbox) */
+.topo-site {
+  background-color: #003366;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.menu-principal {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.links-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.links-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.links-menu a:hover {
+  color: #ffcc00;
+}
+
+/* Menu Hambúrguer (Oculto no Desktop) */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  width: 28px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Layout Principal (CSS Grid) */
+.container-principal {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.titulo-secao {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #003366;
+  border-bottom: 3px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.grade-portal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Cards de Notícia */
+.card-noticia {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.destaque-principal {
+  grid-column: span 2;
+  background-color: #eef5ff;
+  border-left: 6px solid #003366;
+}
+
+.tag-categoria {
+  align-self: flex-start;
+  background-color: #003366;
+  color: #ffffff;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.card-noticia h3 {
+  margin-bottom: 10px;
+  color: #111111;
+}
+
+.card-noticia p {
+  color: #555555;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.btn-leia-mais {
+  display: inline-block;
+  color: #003366;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-leia-mais:hover {
+  text-decoration: underline;
+}
+
+/* Barra Lateral */
+.barra-lateral {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.barra-lateral h3 {
+  color: #003366;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 8px;
+}
+
+.lista-populares {
+  padding-left: 20px;
+}
+
+.lista-populares li {
+  margin-bottom: 12px;
+}
+
+.lista-populares a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.lista-populares a:hover {
+  color: #003366;
+  font-weight: bold;
+}
+
+/* Seção de Formulário Newsletter */
+.secao-newsletter {
+  background-color: #003366;
+  color: #ffffff;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.container-newsletter {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container-newsletter h2 {
+  margin-bottom: 10px;
+}
+
+.container-newsletter p {
+  margin-bottom: 25px;
+  color: #dddddd;
+  font-size: 15px;
+}
+
+.form-newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.campo-grupo label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.campo-grupo input {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-enviar {
+  background-color: #ffcc00;
+  color: #003366;
+  border: none;
+  padding: 14px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.btn-enviar:hover {
+  background-color: #e6b800;
+}
+
+/* Rodapé */
+.rodape-site {
+  background-color: #001f3f;
+  color: #aaaaaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+}
+
+/* Responsividade (Telas Pequenas / Mobile) */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .links-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #002244;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Exibe os links quando a checkbox do menu estiver marcada */
+  .menu-toggle:checked ~ .links-menu {
+    display: flex;
+  }
+
+  .grade-portal {
+    grid-template-columns: 1fr;
+  }
+
+  .destaque-principal {
+    grid-column: span 1;
+  }
+}
