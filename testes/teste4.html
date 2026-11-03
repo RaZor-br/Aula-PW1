@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Estilizado via JS</title>
+</head>
+<body>
+
+    <!-- Estrutura HTML Simples sem classes ou IDs de CSS -->
+    <header id="header">
+        <h1 id="logo">DevJS Studio</h1>
+        <button id="themeToggle">🌙 Modo Escuro</button>
+    </header>
+
+    <main id="main">
+        <section id="hero">
+            <h2 id="heroTitle">Design Moderno Construído Apenas com JavaScript</h2>
+            <p id="heroText">Este site não possui nenhuma linha de CSS! Toda a estilização, cores, espaçamentos e interatividade foram aplicadas dinamicamente com JS.</p>
+            <button id="ctaBtn">Explorar Recurso</button>
+        </section>
+
+        <section id="cardsContainer">
+            <div class="card">
+                <h3>🚀 Alta Performance</h3>
+                <p>Estilização direta via DOM sem carregar arquivos CSS externos.</p>
+            </div>
+            <div class="card">
+                <h3>🎨 Dinamicamente Estilizado</h3>
+                <p>Troca de temas, cores e estados em tempo real via Scripts.</p>
+            </div>
+            <div class="card">
+                <h3>💻 100% JS Vanilla</h3>
+                <p>Sem frameworks, bibliotecas ou dependências adicionais.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>© 2026 DevJS Studio - Criado apenas com HTML & JS</p>
+    </footer>
+
+    <!-- Script JS responsável por TODO o estilo e comportamento -->
+    <script>
+        // 1. Configuração do Estado de Tema
+        let isDarkMode = false;
+
+        // 2. Mapeamento dos Elementos
+        const body = document.body;
+        const header = document.getElementById('header');
+        const logo = document.getElementById('logo');
+        const themeToggle = document.getElementById('themeToggle');
+        const main = document.getElementById('main');
+        const hero = document.getElementById('hero');
+        const heroTitle = document.getElementById('heroTitle');
+        const heroText = document.getElementById('heroText');
+        const ctaBtn = document.getElementById('ctaBtn');
+        const cardsContainer = document.getElementById('cardsContainer');
+        const cards = document.querySelectorAll('.card');
+        const footer = document.getElementById('footer');
+
+        // 3. Função de Aplicação Global de Estilos
+        function aplicarEstilos() {
+            // Estilo do Corpo da Página
+            Object.assign(body.style, {
+                margin: '0',
+                padding: '0',
+                fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif',
+                backgroundColor: isDarkMode ? '#121212' : '#F4F7F6',
+                color: isDarkMode ? '#E0E0E0' : '#333333',
+                transition: 'all 0.3s ease',
+                minHeight: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyByContent: 'space-between'
+            });
+
+            // Estilo do Header
+            Object.assign(header.style, {
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '20px 40px',
+                backgroundColor: isDarkMode ? '#1E1E1E' : '#FFFFFF',
+                boxShadow: isDarkMode ? '0 2px 10px rgba(0,0,0,0.5)' : '0 2px 10px rgba(0,0,0,0.05)'
+            });
+
+            logo.style.margin = '0';
+            logo.style.fontSize = '24px';
+            logo.style.color = isDarkMode ? '#4D94FF' : '#0066FF';
+
+            Object.assign(themeToggle.style, {
+                padding: '10px 18px',
+                border: 'none',
+                borderRadius: '20px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                backgroundColor: isDarkMode ? '#333' : '#E0E0E0',
+                color: isDarkMode ? '#FFF' : '#333',
+                transition: 'transform 0.2s'
+            });
+
+            Object.assign(main.style, {
+                maxWidth: '1000px',
+                margin: '40px auto',
+                padding: '0 20px',
+                flex: '1'
+            });
+
+            Object.assign(hero.style, {
+                textAlign: 'center',
+                padding: '50px 20px',
+                borderRadius: '12px',
+                backgroundColor: isDarkMode ? '#1E1E1E' : '#FFFFFF',
+                marginBottom: '40px'
+            });
+
+            heroTitle.style.fontSize = '32px';
+            heroTitle.style.marginBottom = '15px';
+
+            heroText.style.fontSize = '18px';
+            heroText.style.color = isDarkMode ? '#AAA' : '#666';
+            heroText.style.maxWidth = '600px';
+            heroText.style.margin = '0 auto 25px auto';
+
+            Object.assign(ctaBtn.style, {
+                padding: '12px 30px',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                color: '#FFF',
+                backgroundColor: '#0066FF',
+                border: 'none',
+                borderRadius: '6px',
+                cursor: 'pointer',
+                boxShadow: '0 4px 12px rgba(0, 102, 255, 0.3)'
+            });
+
+            Object.assign(cardsContainer.style, {
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                gap: '20px'
+            });
+
+            cards.forEach(card => {
+                Object.assign(card.style, {
+                    padding: '25px',
+                    borderRadius: '8px',
+                    backgroundColor: isDarkMode ? '#1E1E1E' : '#FFFFFF',
+                    borderLeft: '4px solid #0066FF',
+                    transition: 'transform 0.2s, box-shadow 0.2s'
+                });
+            });
+
+            Object.assign(footer.style, {
+                textAlign: 'center',
+                padding: '20px',
+                fontSize: '14px',
+                color: isDarkMode ? '#777' : '#999',
+                borderTop: isDarkMode ? '1px solid #222' : '1px solid #EEE'
+            });
+        }
+
+        themeToggle.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            themeToggle.textContent = isDarkMode ? '☀️ Modo Claro' : '🌙 Modo Escuro';
+            aplicarEstilos();
+        });
+
+        ctaBtn.addEventListener('mouseenter', () => ctaBtn.style.backgroundColor = '#0052CC');
+        ctaBtn.addEventListener('mouseleave', () => ctaBtn.style.backgroundColor = '#0066FF');
+
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = isDarkMode ? '0 8px 20px rgba(0,0,0,0.6)' : '0 8px 20px rgba(0,0,0,0.1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'none';
+            });
+        });
+
+        aplicarEstilos();
+    </script>
+
+</body>
+</html>

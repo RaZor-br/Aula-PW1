@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Personagens com API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <header class="cabecalho">
+      <h1>Explorador de Personagens</h1>
+      <p class="subtitulo">Consumo assíncrono de dados com Fetch API e JavaScript</p>
+    </header>
+
+    <section class="painel-acoes">
+      <button id="btnSortear" onclick="sortearPersonagem()">Sortear Novo Personagem</button>
+    </section>
+
+    <div id="mensagemStatus" class="status-carregamento">
+      Clique no botão acima para carregar um personagem.
+    </div>
+
+    <article id="cartaoPersonagem" class="cartao oculta">
+      <div class="moldura-imagem">
+        <img id="fotoPersonagem" src="" alt="Foto do Personagem">
+      </div>
+
+      <div class="conteudo-cartao">
+        <h2 id="nomePersonagem">Nome do Personagem</h2>
+
+        <div class="painel-badges">
+          <span id="badgeStatus" class="badge">Status</span>
+          <span id="badgeEspecie" class="badge">Espécie</span>
+        </div>
+
+        <p class="legenda-origem">
+          Origem: <strong id="origemPersonagem">Planeta Terra</strong>
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

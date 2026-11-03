@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de Maioridade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="cartao">
+    <h1>Verificador de Acesso</h1>
+    <p class="instrucao">Informe seus dados para consultar sua situação legal.</p>
+
+    <label for="campoNome">Nome Completo:</label>
+    <input type="text" id="campoNome" placeholder="Ex: Maria Silva">
+
+    <label for="campoIdade">Idade:</label>
+    <input type="number" id="campoIdade" placeholder="Ex: 18">
+
+    <button onclick="verificarIdade()">Verificar Situação</button>
+
+    <p id="mensagemResultado">Preencha os campos e clique no botão acima.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

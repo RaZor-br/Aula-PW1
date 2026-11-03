@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 20px;
+}
+
+.container {
+  background-color: #1e293b;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cabecalho {
+  text-align: center;
+}
+
+.cabecalho h1 {
+  font-size: 1.6rem;
+  color: #38bdf8;
+  margin-bottom: 6px;
+}
+
+.subtitulo {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.painel-acoes {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #0284c7;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #0369a1;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background-color: #475569;
+  cursor: not-allowed;
+}
+
+.status-carregamento {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  text-align: center;
+  min-height: 24px;
+}
+
+.cartao {
+  background-color: #334155;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+.oculta {
+  display: none;
+}
+
+.moldura-imagem {
+  width: 100%;
+  height: 260px;
+  background-color: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.moldura-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.conteudo-cartao {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.conteudo-cartao h2 {
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.painel-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #475569;
+  color: #f1f5f9;
+}
+
+.badge-vivo {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+.badge-morto {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.badge-desconhecido {
+  background-color: #d97706;
+  color: #ffffff;
+}
+
+.legenda-origem {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.legenda-origem strong {
+  color: #38bdf8;
+}
